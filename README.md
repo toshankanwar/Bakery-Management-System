@@ -1,6 +1,5 @@
-# Project Name
+# Bakery Management System
 
-![Project Logo](link-to-logo.png) <!-- Optional: Add a logo image -->
 
 ## Table of Contents
 - [About the Project](#about-the-project)
@@ -15,7 +14,7 @@
 - [Acknowledgments](#acknowledgments)
 
 ## About the Project
-
+-[https://www.toshankanwar.in/](portfolio)
 Provide a brief description of your project, why it exists, and what problems it solves. 
 
 ### Built With
