@@ -31,3 +31,8 @@ The project is one running state . payment gateway and user authentication will 
 1. Clone the repo
    ```bash
    git clone https://github.com/toshankanwar/Bakery-Management-System.git
+
+## Contact
+Just send an email to this email id toshankanwar2003@gmail.com or go to -[portfolio] (toshankanwar.in)
+and lets start conversation. 
+looking to great contribution
