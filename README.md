@@ -3,39 +3,31 @@
 
 ## Table of Contents
 - [About the Project](#about-the-project)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Prerequisites](#Prerequisites)
 - [Contact](#contact)
-- [Acknowledgments](#acknowledgments)
+
 
 ## About the Project
--[Click here](https://bakery.toshankanwar.in/)
-Provide a brief description of your project, why it exists, and what problems it solves. 
 
-### Built With
-- [Technology 1](https://example.com)
-- [Technology 2](https://example.com)
-- [Technology 3](https://example.com)
+The project is dedicated to show the working of an ecommerce website. Here we have many section like shop cart order etc. user can see the variety of bakery item in shop section . the he can able to add them into cart which is fully function. In cart page all the selected items are appear where user can confirm their order. They got their order script from order page . A separate order tracking page is also developed to track the orders where an unique id and date time is provided . And this webpage is responsive for all types of device.
 
-## Features
-- Feature 1
-- Feature 2
-- Feature 3
+To see the project -[Click here](https://bakery.toshankanwar.in/)
+The project is one running state . payment gateway and user authentication will be added soon
+
 
 ## Getting Started
 
-Instructions on setting up your project locally. Follow these steps to get a copy of the project up and running.
+ Follow these steps to get a copy of the project up and running.
+ just clone this repository on vs code. navigate to you directory cd directory-name.
+ Run The Command "npm run start"
 
 ### Prerequisites
-- List any prerequisites needed (e.g., npm, Node.js).
+- no need of any  Prerequisites but know how to run command in terminal
 
 ### Installation
 
 1. Clone the repo
    ```bash
-   git clone https://github.com/your-username/repository-name.git
+   git clone https://github.com/toshankanwar/Bakery-Management-System.git
