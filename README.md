@@ -1,38 +1,70 @@
-# Bakery Management System
+# Getting Started with Create React App
 
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Table of Contents
-- [About the Project](#about-the-project)
-- [Getting Started](#getting-started)
-- [Installation](#installation)
-- [Prerequisites](#Prerequisites)
-- [Contact](#contact)
+## Available Scripts
 
+In the project directory, you can run:
 
-## About the Project
+### `npm start`
 
-The project is dedicated to show the working of an ecommerce website. Here we have many section like shop cart order etc. user can see the variety of bakery item in shop section . the he can able to add them into cart which is fully function. In cart page all the selected items are appear where user can confirm their order. They got their order script from order page . A separate order tracking page is also developed to track the orders where an unique id and date time is provided . And this webpage is responsive for all types of device.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-To see the project -[Click here](https://bakery.toshankanwar.in/)
-The project is one running state . payment gateway and user authentication will be added soon
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
+### `npm test`
 
-## Getting Started
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
- Follow these steps to get a copy of the project up and running.
- just clone this repository on vs code. navigate to you directory cd directory-name.
- Run The Command "npm run start"
+### `npm run build`
 
-### Prerequisites
-- no need of any  Prerequisites but know how to run command in terminal
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Installation
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-1. Clone the repo
-   ```bash
-   git clone https://github.com/toshankanwar/Bakery-Management-System.git
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Contact
-Just send an email to this email id toshankanwar2003@gmail.com or go to -[portfolio](https://www.toshankanwar.in/)
-and lets start conversation. 
-looking to great contribution
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
