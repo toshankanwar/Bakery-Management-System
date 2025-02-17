@@ -2,6 +2,8 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Breadcrumbs from "./Breadcrumbs";
+import '../components/css/Features.css';
 
 export default function Contact() {
   const onSubmit = async (event) => {
@@ -33,6 +35,7 @@ export default function Contact() {
 
   return (
     <div className="contact">
+           <Breadcrumbs />
       <Helmet>
         <title>Contact | Toshan Bakery</title>
       </Helmet>
@@ -49,7 +52,7 @@ export default function Contact() {
           <div className="responsive-container-block container">
             <div className="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12 left-one">
               <div className="content-box">
-                <p className="text-blk section-head">Get In Touch</p>
+                <p className="text-blk section-head temp">Get In Touch</p>
                 <p className="text-blk section-subhead">
                   Are you ready to take a taste of your favorite delicious foodie?
                 </p>
@@ -61,7 +64,7 @@ export default function Contact() {
             >
               <form className="form-box" onSubmit={onSubmit}>
                 <div className="container-block form-wrapper">
-                  <p className="text-blk contactus-head">
+                  <p className="text-blk contactus-head temp">
                    Want to Connect
                   </p>
                   <p className="text-blk contactus-subhead">
@@ -73,7 +76,7 @@ export default function Contact() {
                       id="i10mt-7"
                     >
                       <input
-                        className="input"
+                        className="input nope"
                         id="ijowk-7"
                         name="firstName"
                         placeholder="First Name"
@@ -84,7 +87,7 @@ export default function Contact() {
                       id="i1ro7"
                     >
                       <input
-                        className="input"
+                        className="input nope"
                         id="indfi-5"
                         name="lastName"
                         placeholder="Last Name"
@@ -96,7 +99,7 @@ export default function Contact() {
                       id="ityct"
                     >
                       <input
-                        className="input"
+                        className="input nope"
                         id="ipmgh-7"
                         name="email"
                         placeholder="Email"
@@ -105,7 +108,7 @@ export default function Contact() {
                     </div>
                     <div className="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
                       <input
-                        className="input"
+                        className="input nope"
                         id="imgis-6"
                         name="number"
                         placeholder="Phone Number"
@@ -118,7 +121,7 @@ export default function Contact() {
                     >
                       <textarea
                         aria-placeholder="Type message here"
-                        className="textinput"
+                        className="textinput nope"
                         id="i5vyy-7"
                         placeholder="Type message here"
                         name="message"

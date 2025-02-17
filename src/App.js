@@ -2,10 +2,14 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
+import { useEffect} from "react";
 import { BrowserRouter as Router, Routes, Route } 
 from 'react-router-dom';
-import Order from './components/Order';
+import Orders from './components/Orders';
 import Contact from './components/Contact';
+import AuthPage from "./components/AuthPage";
+import About from './components/About';
+import Auth from './components/Auth';
 import Footer from './components/Footer';
 import Cart from './components/Cart';
 import ProductList from './components/ProductList';
@@ -14,8 +18,20 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useOrderContext } from './components/OrderContext';
 import { useState } from 'react';
-
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase"; 
+import Profile from './components/Profile';
+import ResetPassword from "./components/ResetPassword";
 function App() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe(); // Cleanup the listener on unmount
+  }, []);
 
   const [cartItems, setCartItems] = useState([]);
   const [orderConfirmed, setOrderConfirmed] = useState(false);
@@ -111,11 +127,14 @@ function App() {
                 confirmOrder={confirmOrder}
                 orderConfirmed={orderConfirmed}/>} />
       
-      <Route path="/Order" element={<Order/>} />
-      <Route path="/order-tracking" element={<OrderTracking />} />
+      <Route path="/orders" element={<Orders/>} />
         <Route path="/Contact" element={<Contact />} />
-     
-       
+        <Route path="/signup" element={<Auth isSignUp={true} />} />
+        <Route path="/login" element={<AuthPage />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+        
          
   
       </Routes>

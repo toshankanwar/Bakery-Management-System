@@ -1,0 +1,16 @@
+.breadcrumbs {
+    font-size: 24px;
+    color: gray;
+    margin: 10px 0;
+  }
+  
+  .breadcrumbs a {
+    text-decoration: none;
+    color: #ff7e5f;
+    transition: color 0.3s ease;
+  }
+  
+  .breadcrumbs a:hover {
+    color: #feb47b;
+  }
+  

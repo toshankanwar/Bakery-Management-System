@@ -1,8 +1,34 @@
 import React from 'react'
 import {NavLink} from 'react-router-dom';
+import { useState, useEffect } from "react";
+import {  useNavigate } from "react-router-dom";
 import '../components/css/Navbar.css'
-
+import { auth } from "../firebase";
+import { onAuthStateChanged, signOut } from "firebase/auth";
+import { FaUserCircle } from "react-icons/fa";
+import { BsCart4 } from "react-icons/bs";
 export default function Navbar() {
+  const [user, setUser] = useState(null);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
+
+
+
+  
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    setUser(null);
+    navigate("/");
+  };
+
   return (
     <div clasSNameName="Navbar">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -19,18 +45,43 @@ export default function Navbar() {
           <li className="nav-item">
             <NavLink className="nav-link" to="/Shop">Shop</NavLink>
           </li>
+         
           <li className="nav-item">
-            <NavLink className="nav-link " to="/Cart" >cart</NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/Order">Order</NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/order-tracking">Order Tracking</NavLink>
+            <NavLink className="nav-link " to="/About" >About</NavLink>
           </li>
           <li className="nav-item">
             <NavLink className="nav-link " to="/Contact" >Contact</NavLink>
           </li>
+        <div className="right-item">
+        <div className="profile-menu">
+      <FaUserCircle 
+        size={30} 
+        onClick={() => setShowDropdown(!showDropdown)} 
+        style={{ cursor: "pointer" }} 
+      />
+
+      {showDropdown && (
+        <div className="dropdown">
+          {user ? (
+            <>
+              <p>Welcome, {user.email}</p>
+              <button onClick={() => { navigate("/profile"); setShowDropdown(false); }}>Profile</button>
+              <button onClick={() => { navigate("/orders"); setShowDropdown(false); }}>Orders</button>
+              <button onClick={() => { navigate("/reset-password"); setShowDropdown(false); }}>Reset Yout Password</button>
+              <button onClick={() => { handleLogout(); setShowDropdown(false); }}>Logout</button>
+            </>
+          ) : (
+            <>
+             <button onClick={() => { navigate("/login"); setShowDropdown(false); }}>Signup/Login</button>
+            </>
+          )}
+        </div>
+      )}
+    </div>
+    <div className="cart-item">
+            <NavLink className="nav-link " to="/Cart" ><BsCart4 /></NavLink>
+          </div>
+          </div>
          
         
         </ul>

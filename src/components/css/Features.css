@@ -158,7 +158,12 @@ color:#45595b
     text-align: center;
     justify-content: center; /* Optional: Center-align text */
   }
-  
+  .temp{
+    color: white;
+  }
+  .nope{
+    color: white;
+  }
   @media (max-width: 500px) {
     .nextpage{
         width: 80%;

@@ -1,11 +1,56 @@
 import React from 'react';
 import '../components/css/Features.css'
 import { Helmet } from 'react-helmet';
-const ProductList = ({ products, addToCart }) => {
+import { auth, db } from "../firebase";
+import { useEffect, useState } from "react";
+import { doc, getDoc, updateDoc, arrayUnion } from "firebase/firestore";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Breadcrumbs from "./Breadcrumbs";
+const ProductList = ({ products }) => {
+   const [cart, setCart] = useState([]);
+  const user = auth.currentUser;
+  useEffect(() => {
+    if (user) {
+      const fetchCart = async () => {
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) setCart(docSnap.data().cart);
+      };
+      fetchCart();
+    }
+  }, [user]);
+
+  const addToCart = async (product) => {
+   if (!user) return alert("Please login first!");
+   
+   const userRef = doc(db, "users", user.uid);
+   const existingItem = cart.find((item) => item.id === product.id);
+   
+   let updatedCart;
+   if (existingItem) {
+      updatedCart = cart.map((item) =>
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      );
+    } else {
+      updatedCart = [...cart, { ...product, quantity: 1 }];
+    }
+
+    await updateDoc(userRef, { cart: updatedCart });
+    setCart(updatedCart);
+
+    // Show Toastify Notification
+    toast.success(`${product.name} added to cart!`, { position: "top-right" });
+  };
   return (
+   
     <div>
        <Helmet>
+
+       <ToastContainer />
         <title>Shop | Toshan Bakery</title></Helmet>  
+        
+       <Breadcrumbs />
          <div className="product-list">
           
 
@@ -40,13 +85,7 @@ const ProductList = ({ products, addToCart }) => {
         </div>
     </div>
       ))}
-          <div className="nextpage">
-        <button className="btn">1</button>
-        <button className="btn">2</button>
-        <button className="btn">3</button>
-        <button className="btn">Next</button>
-
-    </div>
+   
       
     </div>
     </div>

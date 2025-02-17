@@ -1,6 +1,234 @@
-.logo{
-    color: #81c408;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-right: 30px;
+
+
+/* Navbar container */
+.navbar {
+  padding: 15px 20px;
+  display: flex;
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color:#81c408 ;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  color: #000000;
+}
+
+.navbar-nav .nav-item {
+  margin: 0 10px;
+  color: #000000;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #000000;
+}
+
+/* Mobile Toggler Button */
+.navbar-toggler {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hamburger Icon */
+
+
+.navbar-toggler-icon {
+  font-size: 1.5rem;
+  color:#81c408;
+}
+
+/* Profile Menu */
+.profile-menu {
+  position: relative;
+}
+
+.profile-menu .dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 200px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+
+.profile-menu .dropdown p {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.profile-menu .dropdown button {
+  background: transparent;
+  border: none;
+  padding: 8px 0;
+  color: #ff7e5f;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.profile-menu .dropdown button:hover {
+  color: #feb47b;
+}
+
+/* Cart Icon */
+.cart-item {
+  margin-left: 20px;
+  font-size: 1.5rem;
+  color: white;
+}
+.cart-item .nav-link{
+  font-size: 25px;
+  margin-left: 40%;
+}
+
+/* Mobile Styling */
+@media (max-width: 992px) {
+ 
+
+  .cart-item {
+    display: block;
+  }
+}
+.right-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+/* Background Overlay with Blur Effect */
+.ReactModal__Overlay {
+  background: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Centered Modal Box */
+.auth-modal {
+  background: white;
+  width: 400px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+  animation: fadeInSlideUp 0.4s ease-in-out;
+}
+
+/* Modal Heading */
+.auth-modal h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #ff7e5f;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* Error Message */
+.auth-modal p {
+  text-align: center;
+  color: red;
+  font-size: 14px;
+}
+
+/* Form Styling */
+.auth-modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Label Styling */
+.auth-modal label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+/* Input Fields */
+.auth-modal input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.auth-modal input:focus {
+  border-color: #ff7e5f;
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(255, 126, 95, 0.5);
+}
+
+/* Button Styling */
+.auth-modal button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.auth-modal button:hover {
+  background: linear-gradient(to right, #feb47b, #ff7e5f);
+  transform: scale(1.05);
+}
+
+/* Close Button */
+.auth-modal .close-button {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+  transition: 0.3s;
+}
+
+.auth-modal .close-button:hover {
+  color: #ff7e5f;
+}
+
+/* Fade-in & Slide-up Animation */
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
