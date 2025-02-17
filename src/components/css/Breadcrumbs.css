@@ -6,11 +6,11 @@
   
   .breadcrumbs a {
     text-decoration: none;
-    color: #ff7e5f;
+    color: #81c408;
     transition: color 0.3s ease;
   }
   
   .breadcrumbs a:hover {
-    color: #feb47b;
+    color: #81c408;
   }
   
